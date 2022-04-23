@@ -4,10 +4,13 @@ https://itxiaohao.github.io/passages/webpack4-pack-js/
 
 ## features
 
-[] - 搭建项目并打包 JS 文件
-[] - 生产和开发模式
+## 起步
 
 - 打包第一个文件
 - 配置模块(webpack.config.js)
 - npm scripts
 -
+
+## 管理资源
+
+- 加载 css 设置 rules style-loader css-loader
