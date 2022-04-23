@@ -10,7 +10,7 @@ function component() {
   element.innerHTML = _.join(['hello', 'webpack', 'print']);
   element.classList.add('hello');
 
-  btn.innerHTML = 'click me and check the console';
+  btn.innerHTML = 'click me';
   btn.onclick = printMe;
   element.appendChild(btn);
   const myIcon = new Image();
