@@ -22,3 +22,8 @@ https://itxiaohao.github.io/passages/webpack4-pack-js/
 - 设置多入口，打包 index.js print.js
 - 设置 HtmlWebpackPlugin
 - 清理 /dist 文件夹
+
+## 开发环境
+
+- 使用 source map
+-
