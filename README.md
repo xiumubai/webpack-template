@@ -26,4 +26,4 @@ https://itxiaohao.github.io/passages/webpack4-pack-js/
 ## 开发环境
 
 - 使用 source map
--
+- 开发工具 Watch Mode webpack-dev-server webpack-dev-middlewar3
