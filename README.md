@@ -14,3 +14,4 @@ https://itxiaohao.github.io/passages/webpack4-pack-js/
 ## 管理资源
 
 - 加载 css 设置 rules style-loader css-loader
+- 加载 images 图像
