@@ -29,4 +29,4 @@ https://itxiaohao.github.io/passages/webpack4-pack-js/
 - 开发工具
   - Watch Mode 实时监听打包
   - webpack-dev-server 基本的 web server，并且具有 live reloading
-  - webpack-dev-middlewar3
+  - webpack-dev-middleware
