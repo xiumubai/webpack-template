@@ -1,11 +1,10 @@
-function getComponent() {
-  return import('lodash')
-    .then(({ default: _ }) => {
-      const element = document.createElement('div');
-      element.innerHTML = _.join(['hello', 'webpack', 'print']);
-      return element;
-    })
-    .catch((error) => 'err')
+async function getComponent() {
+
+  const { default: _ } = await import('lodash')
+
+  const element = document.createElement('div');
+  element.innerHTML = _.join(['hello', 'webpack', 'print']);
+  return element;
 }
 
 getComponent().then((component) => {
