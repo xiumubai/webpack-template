@@ -21,7 +21,9 @@ module.exports = {
     publicPath: '/',
   },
   optimization: {
-    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+    }
   },
   devtool: 'inline-source-map',
   devServer: {
