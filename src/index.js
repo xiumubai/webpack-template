@@ -1,10 +1,14 @@
-import _ from 'lodash';
-
-function component() {
-  const element = document.createElement('div');
-
-  element.innerHTML = _.join(['hello', 'webpack', 'print']);
-  return element;
+function getComponent() {
+  return import('lodash')
+    .then(({ default: _ }) => {
+      const element = document.createElement('div');
+      element.innerHTML = _.join(['hello', 'webpack', 'print']);
+      return element;
+    })
+    .catch((error) => 'err')
 }
 
-document.body.appendChild(component());
+getComponent().then((component) => {
+  document.body.appendChild(component);
+})
+ 
