@@ -40,4 +40,3 @@ https://itxiaohao.github.io/passages/webpack4-pack-js/
 - 防止重复：使用 Entry dependencies 或者 SplitChunksPlugin 去重和分离 chunk。
 - 动态导入：通过模块的内联函数调用来分离代码。
 
-
