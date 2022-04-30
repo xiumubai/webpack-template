@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -7,42 +6,20 @@ module.exports = {
     index: './src/index.js',
   },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: 'webpack-number.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
-    publicPath: '/',
-  },
-  devtool: 'inline-source-map',
-  optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vender: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
+    library: {
+      name: 'webpackNumbers',
+      type: 'umd',
     },
   },
-  devServer: {
-    static: './dist',
+  externals: {
+    lodash: {
+      commonjs: 'lodash',
+      commonjs2: 'lodash',
+      amd: 'lodash',
+      root: '_',
+    },
   },
-  module: {
-    rules: [
-      {
-        test: /\.css/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)/i,
-        type: 'asset/resource',
-      },
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Caching',
-    }),
-  ],
+  devtool: 'inline-source-map',
 };

@@ -44,3 +44,8 @@ https://itxiaohao.github.io/passages/webpack4-pack-js/
 - 输出文件的文件名
 - 提取引导模板(extracting boilerplate)
 - 模块标识符(module identifier)
+
+### 创建 library
+
+- 外部化 lodash
+-
