@@ -1,32 +1,46 @@
-# webpack-template
+# [性能优化](https://webpack.docschina.org/guides/build-performance/)
 
-https://itxiaohao.github.io/passages/webpack4-pack-js/
+## loader
 
-## features
+过使用 include 字段，仅将 loader 应用在实际需要将其转换的模块：
 
-## 起步
+```js
+const path = require('path');
 
-- 打包第一个文件
-- 配置模块(webpack.config.js)
-- npm scripts
+module.exports = {
+  //...
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'src'),
+        loader: 'babel-loader',
+      },
+    ],
+  },
+};
+```
 
-## 管理资源
+## 引导(bootstrap)
 
-- 加载 css 设置 rules style-loader css-loader
-- 加载 images 图像
+每个额外的 loader/plugin 都有其启动时间。尽量少地使用工具。
 
-## 管理输出
+```js
 
-到目前为止，我们都是在 index.html 文件中手动引入所有资源，然而随着应用程序增长，并且一旦开始 在文件名中使用 hash 并输出 多个 bundle，如果继续手动管理 index.html 文件，就会变得困难起来。然而，通过一些插件可以使这个过程更容易管控
+```
 
-- 设置多入口，打包 index.js print.js
-- 设置 HtmlWebpackPlugin
-- 清理 /dist 文件夹
+```js
 
-## 开发环境
+```
 
-- 使用 source map
-- 开发工具
-  - Watch Mode 实时监听打包
-  - webpack-dev-server 基本的 web server，并且具有 live reloading
-  - webpack-dev-middlewar3
+```js
+
+```
+
+```js
+
+```
+
+```js
+
+```
