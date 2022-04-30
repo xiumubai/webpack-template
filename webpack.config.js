@@ -1,25 +1,28 @@
 const path = require('path');
 
-module.exports = {
-  mode: 'development',
-  entry: {
-    index: './src/index.js',
-  },
-  output: {
-    filename: 'webpack-number.js',
-    path: path.resolve(__dirname, 'dist'),
-    library: {
-      name: 'webpackNumbers',
-      type: 'umd',
+module.exports = (env) => {
+  console.log(env);
+  return {
+    mode: 'development',
+    entry: {
+      index: './src/index.js',
     },
-  },
-  externals: {
-    lodash: {
-      commonjs: 'lodash',
-      commonjs2: 'lodash',
-      amd: 'lodash',
-      root: '_',
+    output: {
+      filename: 'webpack-number.js',
+      path: path.resolve(__dirname, 'dist'),
+      library: {
+        name: 'webpackNumbers',
+        type: 'umd',
+      },
     },
-  },
-  devtool: 'inline-source-map',
+    externals: {
+      lodash: {
+        commonjs: 'lodash',
+        commonjs2: 'lodash',
+        amd: 'lodash',
+        root: '_',
+      },
+    },
+    devtool: 'inline-source-map',
+  };
 };

@@ -11,7 +11,7 @@
     "start": "webpack server --open",
     "watch": "webpack --watch",
     "server": "node server.js",
-    "build": "webpack"
+    "build": "webpack --env production --progress"
   },
   "repository": {
     "type": "git",
