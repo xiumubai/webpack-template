@@ -1,52 +1,18 @@
-# webpack-template
+# [生产环境](https://webpack.docschina.org/guides/production/)
 
-https://itxiaohao.github.io/passages/webpack4-pack-js/
+## 配置
 
-## features
+development(开发环境) 和 production(生产环境) 这两个环境下的构建目标存在着巨大差异。
 
-### 起步
+- 在开发环境中，我们需要：强大的 source map 和一个有着 live reloading(实时重新加载) 或 hot module replacement(热模块替换) 能力的 localhost server。
+- 生产环境目标则转移至其他方面，关注点在于压缩 bundle、更轻量的 source map、资源优化等.
 
-- 打包第一个文件
-- 配置模块(webpack.config.js)
-- npm scripts
+通过这些优化方式改善加载时间。由于要遵循逻辑分离，我们通常建议为每个环境编写彼此独立的 webpack 配置。
 
-### 管理资源
+虽然，以上我们将 生产环境 和 开发环境 做了细微区分，但是，请注意，我们还是会遵循不重复原则(Don't repeat yourself - DRY)，保留一个 "common(通用)" 配置
 
-- 加载 css 设置 rules style-loader css-loader
-- 加载 images 图像
+为了将这些配置合并在一起，我们将使用一个名为 webpack-merge 的工具。此工具会引用 "common" 配置，因此我们不必再在环境特定(environment-specific)的配置中编写重复代码。
 
-### 管理输出
+我们先从安装 webpack-merge 开始
 
-到目前为止，我们都是在 index.html 文件中手动引入所有资源，然而随着应用程序增长，并且一旦开始 在文件名中使用 hash 并输出 多个 bundle，如果继续手动管理 index.html 文件，就会变得困难起来。然而，通过一些插件可以使这个过程更容易管控
-
-- 设置多入口，打包 index.js print.js
-- 设置 HtmlWebpackPlugin
-- 清理 /dist 文件夹
-
-### 开发环境
-
-- 使用 source map
-- 开发工具
-  - Watch Mode 实时监听打包
-  - webpack-dev-server 基本的 web server，并且具有 live reloading
-  - webpack-dev-middleware
-
-### [代码分离](https://webpack.docschina.org/guides/code-splitting/)
-
-- 入口起点：使用 entry 配置手动地分离代码。
-- 防止重复：使用 Entry dependencies 或者 SplitChunksPlugin 去重和分离 chunk。
-- 动态导入：通过模块的内联函数调用来分离代码。
-
-- 预获取/预加载模块(prefetch/preload module)
-
-### 缓存
-
-- 输出文件的文件名
-- 提取引导模板(extracting boilerplate)
-- 模块标识符(module identifier)
-
-### 创建 library
-
-- 外部化 lodash
-
-### 环境变量
+`npm install --save-dev webpack-merge`

@@ -1,22 +1,23 @@
 import _ from 'lodash';
-import numRef from './ref.json';
+import printMe from './print';
+import './style.css';
 
-export function numToWord(num) {
-  return _.reduce(
-    numRef,
-    (accm, ref) => {
-      return ref.num === num ? ref.word : accm;
-    },
-    ''
-  );
+if (process.env.NODE_ENV !== 'production') {
+  console.log('development env!!!');
 }
 
-export function wordToNum(word) {
-  return _.reduce(
-    numRef,
-    (accm, ref) => {
-      return ref.word === word && word.toLowerCase() ? ref.num : accm;
-    },
-    -1
-  );
+function component() {
+  const element = document.createElement('div');
+  const btn = document.createElement('button');
+
+  element.innerHTML = _.join(['hello', 'webpack', 'print']);
+  element.classList.add('hello');
+
+  btn.innerHTML = 'click me';
+  btn.onclick = printMe;
+  element.appendChild(btn);
+
+  return element;
 }
+
+document.body.appendChild(component());
