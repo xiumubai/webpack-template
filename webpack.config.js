@@ -13,6 +13,18 @@ module.exports = {
     publicPath: '/',
   },
   devtool: 'inline-source-map',
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vender: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
   devServer: {
     static: './dist',
   },
